@@ -1,0 +1,38 @@
+<div *ngIf="isLoading">
+  <h1>Loading...</h1>
+</div>
+<div *ngIf="!isLoading" class="container ">
+  <div class=" m-3 d-flex">
+    <div class="card p-3 d-flex">
+      <h1 class="text-center"><strong>Smart Auction</strong></h1>
+      
+    </div>
+    
+  </div>
+  <div class=" m-3 d-flex">
+    <div class="card p-3 d-flex">
+     <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/suburban-house-royalty-free-image-1584972559.jpg?crop=1.00xw:0.752xh;0,0.120xh&resize=600:*">
+     <h3 class=text-center>Home Sweet Home</h3>
+      
+    </div>
+    
+  </div>
+  <div class=" m-3 d-flex">
+    <div class="card p-3 d-flex">
+      <h3>Current Price : {{highestBid}}ETH | Auction State: {{auctionAlreadyEnded ? 'ended' : 'running'}} <span><i (click)="fetchCurrentValues()" class="fa fa-refresh" aria-hidden="true"></i>
+      </span></h3>
+      <input #amount  type=text placeholder="Enter amount in ETH"  class="form-control m-2">
+      <button class="btn btn-primary m-2"style="width: 100%;"(click)="bid(amount.value)" >Bid</button>
+      <div class="row d-flex">
+        <div class="col-md-6">
+          <button class="btn btn-primary m-2" (click)="withdraw()" style="width: 100%;">Withdraw</button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary m-2" (click)="end()"  style="width: 100%;">End</button>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
